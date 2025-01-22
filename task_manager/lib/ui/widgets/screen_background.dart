@@ -22,7 +22,7 @@ class ScreenBackground extends StatelessWidget {
         ),
 
 
-        child,
+        SafeArea(child: child),
 
       ],
     );
