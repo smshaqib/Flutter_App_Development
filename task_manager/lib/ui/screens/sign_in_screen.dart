@@ -1,10 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager/ui/screens/forgot_password_verify_email_screen.dart';
+import 'package:task_manager/ui/screens/main_bottom_nav_screen.dart';
 import 'package:task_manager/ui/screens/sign_up_screen.dart';
 import 'package:task_manager/ui/widgets/screen_background.dart';
 import 'sign_up_screen.dart';
 import '../utils/app_colors.dart';
+import 'main_bottom_nav_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -84,7 +86,12 @@ class _SignInScreenState extends State<SignInScreen> {
                     ElevatedButton(
                 
                 
-                        onPressed: (){},
+                        onPressed: (){
+
+                          Navigator.pushReplacementNamed(
+                              context, MainBottomNavScreen.name);
+
+                        },
                         child: Icon(Icons.arrow_circle_right_outlined),
                 
                     ),
