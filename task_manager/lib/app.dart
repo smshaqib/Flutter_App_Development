@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/ui/screens/add_new_task_screen.dart';
 import 'package:task_manager/ui/screens/forgot_password_otp_screen.dart';
 import 'package:task_manager/ui/screens/forgot_password_verify_email_screen.dart';
 import 'package:task_manager/ui/screens/main_bottom_nav_screen.dart';
@@ -122,6 +123,9 @@ class TaskManagerApp extends StatelessWidget {
         }
         else if(settings.name==MainBottomNavScreen.name){
           widget = const MainBottomNavScreen();
+        }
+        else if(settings.name==AddNewTaskScreen.name){
+          widget = const AddNewTaskScreen();
         }
 
         return MaterialPageRoute(builder: (_) => widget);
