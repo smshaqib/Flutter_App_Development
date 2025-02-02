@@ -7,13 +7,15 @@ class NetworkResponse {
   final int statusCode;
   final Map<String, dynamic>? responseData;
   final bool isSuccess;
-  final String? errorMessage;
+  final String errorMessage;
 
   NetworkResponse(
       {required this.statusCode,
       required this.isSuccess,
       this.responseData,
-      this.errorMessage});
+      this.errorMessage = "Something Went Wrong!",
+
+      });
 }
 
 class NetworkCaller {
@@ -21,7 +23,8 @@ class NetworkCaller {
     try {
       Uri uri = Uri.parse(url);
 
-      print('URL =>  $url');
+      debugPrint('URL => $url');
+
 
       Response response = await get(uri);
 
@@ -55,7 +58,8 @@ class NetworkCaller {
     try {
       Uri uri = Uri.parse(url);
 
-      print('URL =>  $url');
+      debugPrint('URL =>  $url');
+      debugPrint('Body => $body');
 
       Response response = await post(uri,
 
@@ -91,5 +95,5 @@ class NetworkCaller {
   }
 
 
-  
+
 }
