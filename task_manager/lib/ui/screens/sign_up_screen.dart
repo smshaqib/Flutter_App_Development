@@ -7,6 +7,7 @@ import 'package:task_manager/ui/widgets/snack_bar_message.dart';
 
 import '../../data/utils/utils.dart';
 import '../utils/app_colors.dart';
+import 'package:http/http.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -117,6 +118,11 @@ class _SignUpScreen extends State<SignUpScreen> {
                     validator: (String? value) {
                       if (value?.trim().isEmpty ?? true) {
                         return 'Enter your Password';
+                      }
+
+                      if(value!.length <6){
+
+                        return 'Enter a Password more than 6 letters';
                       }
                       return null;
                     },
